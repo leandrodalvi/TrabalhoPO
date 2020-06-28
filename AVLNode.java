@@ -1,3 +1,5 @@
+package TrabalhoPO;
+
 public class AVLNode {
     private Item info;
     private AVLNode esq, dir;

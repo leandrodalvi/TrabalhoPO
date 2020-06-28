@@ -1,3 +1,6 @@
+package TrabalhoPO;
+
+
 public class ABB {
     public ABBNode raiz;
 	private int quantNos;

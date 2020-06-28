@@ -1,3 +1,5 @@
+package TrabalhoPO;
+
 public class ABBNode {
     private ABBNode esq;
 	private ABBNode dir;

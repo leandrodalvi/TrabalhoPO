@@ -1,3 +1,5 @@
+package TrabalhoPO;
+
 public class AVL {
     private AVLNode raiz;
     private boolean h;

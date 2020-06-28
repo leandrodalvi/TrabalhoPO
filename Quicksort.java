@@ -1,3 +1,5 @@
+package TrabalhoPO;
+
 public class Quicksort {
     /* This function takes last element as pivot, 
        places the pivot element at its correct 

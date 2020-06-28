@@ -1,3 +1,5 @@
+package TrabalhoPO;
+
 public class Item {
     private int cpf;
     private int subscription;
