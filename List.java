@@ -32,7 +32,11 @@ public class List {
 			this.ult.setProx(novo);
 			this.ult = novo;
 		}
-	}
+    }
+    
+    public int getQuantNos(){
+        return this.quantidade_de_nos;
+    }
 	
 	public boolean retira(int cpf) {
 		ListNode ponteiro, aux;
