@@ -1,5 +1,5 @@
 package TrabalhoPO;
 
-public class main {
+public class Main{
     
 }
