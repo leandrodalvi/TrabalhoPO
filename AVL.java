@@ -42,7 +42,7 @@ public class AVL {
                     no.setFatorBalanceamento((byte) 1);
                     break;
                 case 1:
-                    no = this.rotaçãoEsquerda(no);
+                    no = this.rotacaoEsquerda(no);
             }
         return no;
     }
@@ -58,12 +58,12 @@ public class AVL {
                     no.setFatorBalanceamento((byte) -1);
                     break;
                 case -1:
-                    no = this.rotaçãoDireita(no);
+                    no = this.rotacaoDireita(no);
             }
         return no;
     }
 
-    private AVLNode rotaçãoDireita(AVLNode no) {
+    private AVLNode rotacaoDireita(AVLNode no) {
         AVLNode temp1, temp2;
         temp1 = no.getEsq();
         if (temp1.getFatorBalanceamento() == -1) {
@@ -92,7 +92,7 @@ public class AVL {
         return no;
     }
 
-    private AVLNode rotaçãoEsquerda(AVLNode no) {
+    private AVLNode rotacaoEsquerda(AVLNode no) {
         AVLNode temp1, temp2;
         temp1 = no.getDir();
         if (temp1.getFatorBalanceamento() == 1) {

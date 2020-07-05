@@ -33,13 +33,13 @@ public class Hashmap{
         return true;
     }
 
-    private int hashing(int key){
+    private long hashing(long key){
         return (key%this.array.length);
     }
 
     public void insert(Item novo){
-        int key = hashing(novo.getCpf());
-        if(array[key] != null){
+        int key = (int) hashing(novo.getCpf());
+        if(array[key] == null){
             array[key] = new List();
             array[key].insere_final(novo);
         }else{

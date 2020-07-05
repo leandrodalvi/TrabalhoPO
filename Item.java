@@ -1,14 +1,14 @@
 package TrabalhoPO;
 
 public class Item {
-    private int cpf;
+    private long cpf;
     private int subscription;
     private float value;
     private boolean paid;
 
     //getBlock
 
-    public int getCpf() {
+    public long getCpf() {
         return cpf;
     }
 
