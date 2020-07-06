@@ -37,7 +37,7 @@ public class Hashmap{
     }
 
     public void insert(Item novo){
-        int key = (int) hashing(novo.getCpf());
+        int key = hashing(novo.getCpf());
         if(array[key] == null) {
             array[key] = new List();
             array[key].insere_final(novo);
