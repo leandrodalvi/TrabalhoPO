@@ -2,17 +2,32 @@ package TrabalhoPO;
 
 public class Item {
     private long cpf;
-    private int subscription;
+    private long subscription;
     private float value;
     private boolean paid;
 
-    //getBlock
+    
 
-    public long getCpf() {
+    public Item(long cpf, long subscription, float value, boolean paid) {
+		super();
+		this.cpf = cpf;
+		this.subscription = subscription;
+		this.value = value;
+		this.paid = paid;
+	}
+    
+    
+
+	@Override
+	public String toString() {				
+		return this.cpf+";"+this.subscription+";"+this.value+";"+this.paid+";";
+	}
+
+	public long getCpf() {
         return cpf;
     }
 
-    public int getSubscription() {
+    public long getSubscription() {
         return subscription;
     }
 

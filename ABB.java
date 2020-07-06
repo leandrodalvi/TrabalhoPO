@@ -4,7 +4,8 @@ package TrabalhoPO;
 public class ABB {
     public ABBNode raiz;
 	private int quantNos;
-
+	
+	
 	public ABB() {
 		this.raiz = null;
 		this.quantNos = 0;

@@ -1,6 +1,6 @@
 package TrabalhoPO;
 
-public class Quicksort {
+public class QuickSort {
     int partition(Item arr[], int low, int high) 
     { 
         Item pivot = arr[high];  
