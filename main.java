@@ -9,7 +9,7 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 
 		Test test = new Test();
-		Result[] results = new Result[60];
+		Result[] results = new Result[100];
 		int count = 0;
 
 		Result[] aux = new Result[5];
@@ -336,8 +336,75 @@ public class Main {
 		}
 		results[count++] = getAverage(aux);
 
+//AVL
 
-		//AVL
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(500, "alea");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(500, "inv");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(500, "ord");
+		}
+		results[count++] = getAverage(aux);
+
+		//div
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(1000, "alea");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(1000, "inv");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(1000, "ord");
+		}
+		results[count++] = getAverage(aux);
+
+		//div
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(5000, "alea");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(5000, "inv");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(5000, "ord");
+		}
+		results[count++] = getAverage(aux);
+
+		//div
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(10000, "alea");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(10000, "inv");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(10000, "ord");
+		}
+		results[count++] = getAverage(aux);
+
+		//div
 
 		for(int i = 0;  i < 5 ; i++) {
 			aux[i] = test.avlTest(50000, "alea");
@@ -347,8 +414,8 @@ public class Main {
 		for(int i = 0;  i < 5 ; i++) {
 			aux[i] = test.avlTest(50000, "inv");
 		}
-
 		results[count++] = getAverage(aux);
+
 		for(int i = 0;  i < 5 ; i++) {
 			aux[i] = test.avlTest(50000, "ord");
 		}
@@ -356,7 +423,7 @@ public class Main {
 
 
 
-		//HASHMAP-UH
+		//HASH
 
 		for(int i = 0;  i < 5 ; i++) {
 			aux[i] = test.hashTest(500, "alea");
@@ -389,7 +456,6 @@ public class Main {
 		}
 		results[count++] = getAverage(aux);
 
-		//div
 
 		for(int i = 0;  i < 5 ; i++) {
 			aux[i] = test.hashTest(5000, "alea");
@@ -406,7 +472,6 @@ public class Main {
 		}
 		results[count++] = getAverage(aux);
 
-		//div
 
 		for(int i = 0;  i < 5 ; i++) {
 			aux[i] = test.hashTest(10000, "alea");
@@ -421,9 +486,9 @@ public class Main {
 		for(int i = 0;  i < 5 ; i++) {
 			aux[i] = test.hashTest(10000, "ord");
 		}
-		results[count++] = getAverage(aux);
 
-		//div
+
+		results[count++] = getAverage(aux);
 
 		for(int i = 0;  i < 5 ; i++) {
 			aux[i] = test.hashTest(50000, "alea");
@@ -438,10 +503,7 @@ public class Main {
 		for(int i = 0;  i < 5 ; i++) {
 			aux[i] = test.hashTest(50000, "ord");
 		}
-		results[count++] = getAverage(aux);//
-
-
-
+		results[count++] = getAverage(aux);
 
 		showResults(results);
 

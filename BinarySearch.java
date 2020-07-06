@@ -2,10 +2,12 @@ package TrabalhoPO;
 
 public class BinarySearch {
         // Returns index of x if it is present in arr[l.. 
-        // r], else return -1 
+        // r], else return -1
+
+
 	
 	public static Item binarySearch(Item[] arr, long x) {
-		return  binarySearch(arr, 0, arr.length, x);
+		return  binarySearch(arr, 0, arr.length - 1, x);
 	}
         public static Item binarySearch(Item arr[], int l, int r, long x) 
         { 
