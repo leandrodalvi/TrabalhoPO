@@ -3,7 +3,7 @@ package TrabalhoPO;
 public class QuickSort {
     int partition(Item arr[], int low, int high) 
     { 
-        Item pivot = arr[high];  
+        Item pivot = arr[(high + low)/2];  
         int i = (low-1); // index of smaller element 
         for (int j=low; j<high; j++) 
         { 
