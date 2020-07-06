@@ -4,11 +4,20 @@ public class List {
     private ListNode prim;
 	private ListNode ult;
 	private int quantidade_de_nos;
-	
+
 	public List(){
 		this.prim = this.ult = null;
 		this.quantidade_de_nos = 0;
 	}
+
+	public ListNode getPrim(){
+		return prim;
+	}
+
+	public ListNode getUlt(){
+		return ult;
+	}
+
 	
 	//bloco de codigo de inserção
 	public void insere_primeiro(Item inserido) {

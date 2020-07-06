@@ -9,95 +9,382 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 
 		Test test = new Test();
-		Result[] results = new Result[100];
+		Result[] results = new Result[60];
 		int count = 0;
 
-		test.heapTest(500, "alea");
-		test.heapTest(500, "inv");
-		test.heapTest(500, "ord");
+		Result[] aux = new Result[5];
 
-		test.heapTest(1000, "alea");
-		test.heapTest(1000, "inv");
-		test.heapTest(1000, "ord");
+//HEAPSORT
 
-		test.heapTest(5000, "alea");
-		test.heapTest(5000, "inv");
-		test.heapTest(5000, "ord");
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.heapTest(500, "alea");
+		}
+		results[count++] = getAverage(aux);
 
-		test.heapTest(10000, "alea");
-		test.heapTest(10000, "inv");
-		test.heapTest(10000, "ord");
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.heapTest(500, "inv");
+		}
+		results[count++] = getAverage(aux);
 
-		test.heapTest(50000, "alea");
-		test.heapTest(50000, "inv");
-		test.heapTest(50000, "ord");
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.heapTest(500, "ord");
+		}
+		results[count++] = getAverage(aux);
+
+		//div
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.heapTest(1000, "alea");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.heapTest(1000, "inv");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.heapTest(1000, "ord");
+		}
+		results[count++] = getAverage(aux);
+
+		//div
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.heapTest(5000, "alea");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.heapTest(5000, "inv");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.heapTest(5000, "ord");
+		}
+		results[count++] = getAverage(aux);
+
+		//div
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.heapTest(10000, "alea");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.heapTest(10000, "inv");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.heapTest(10000, "ord");
+		}
+		results[count++] = getAverage(aux);
+
+		//div
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.heapTest(50000, "alea");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.heapTest(50000, "inv");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.heapTest(50000, "ord");
+		}
+		results[count++] = getAverage(aux);
+
+
+		//QUICKSORT
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.quickTest(500, "alea");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.quickTest(500, "inv");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.quickTest(500, "ord");
+		}
+		results[count++] = getAverage(aux);
+
+		//div
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.quickTest(1000, "alea");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.quickTest(1000, "inv");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.quickTest(1000, "ord");
+		}
+		results[count++] = getAverage(aux);
+
+		//div
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.quickTest(5000, "alea");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.quickTest(5000, "inv");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.quickTest(5000, "ord");
+		}
+		results[count++] = getAverage(aux);
+
+		//div
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.quickTest(10000, "alea");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.quickTest(10000, "inv");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.quickTest(10000, "ord");
+		}
+		results[count++] = getAverage(aux);
+
+		//div
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.quickTest(50000, "alea");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.quickTest(50000, "inv");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.quickTest(50000, "ord");
+		}
+		results[count++] = getAverage(aux);//
+
+
+		//ABB
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.abbTest(500, "alea");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.abbTest(500, "inv");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.abbTest(500, "ord");
+		}
+		results[count++] = getAverage(aux);
+
+		//div
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.abbTest(1000, "alea");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.abbTest(1000, "inv");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.abbTest(1000, "ord");
+		}
+		results[count++] = getAverage(aux);
+
+		//div
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.abbTest(5000, "alea");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.abbTest(5000, "inv");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.abbTest(5000, "ord");
+		}
+		results[count++] = getAverage(aux);
+
+		//div
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.abbTest(10000, "alea");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.abbTest(10000, "inv");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.abbTest(10000, "ord");
+		}
+		results[count++] = getAverage(aux);
+
+		//div
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.abbTest(50000, "alea");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.abbTest(50000, "inv");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.abbTest(50000, "ord");
+		}
+		results[count++] = getAverage(aux);//
 
 
 
-		test.quickTest(500, "alea");
-		test.quickTest(500, "inv");
-		test.quickTest(500, "ord");
+		//HASHMAP-UH
 
-		test.quickTest(1000, "alea");
-		test.quickTest(1000, "inv");
-		test.quickTest(1000, "ord");
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.hashTest(500, "alea");
+		}
+		results[count++] = getAverage(aux);
 
-		test.quickTest(5000, "alea");
-		test.quickTest(5000, "inv");
-		test.quickTest(5000, "ord");
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.hashTest(500, "inv");
+		}
+		results[count++] = getAverage(aux);
 
-		test.quickTest(10000, "alea");
-		test.quickTest(10000, "inv");
-		test.quickTest(10000, "ord");
-
-		test.quickTest(50000, "alea");
-		test.quickTest(50000, "inv");
-		test.quickTest(50000, "ord");
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.hashTest(500, "ord");
+		}
+		results[count++] = getAverage(aux);
 
 
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.hashTest(1000, "alea");
+		}
+		results[count++] = getAverage(aux);
 
-		test.abbTest(500, "alea");
-		test.abbTest(500, "inv");
-		test.abbTest(500, "ord");
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.hashTest(1000, "inv");
+		}
+		results[count++] = getAverage(aux);
 
-		test.abbTest(1000, "alea");
-		test.abbTest(1000, "inv");
-		test.abbTest(1000, "ord");
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.hashTest(1000, "ord");
+		}
+		results[count++] = getAverage(aux);
 
-		test.abbTest(5000, "alea");
-		test.abbTest(5000, "inv");
-		test.abbTest(5000, "ord");
+		//div
 
-		test.abbTest(10000, "alea");
-		test.abbTest(10000, "inv");
-		test.abbTest(10000, "ord");
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.hashTest(5000, "alea");
+		}
+		results[count++] = getAverage(aux);
 
-		test.abbTest(50000, "alea");
-		test.abbTest(50000, "inv");
-		test.abbTest(50000, "ord");
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.hashTest(5000, "inv");
+		}
+		results[count++] = getAverage(aux);
 
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.hashTest(5000, "ord");
+		}
+		results[count++] = getAverage(aux);
 
-		//		test.hashTest(500, "alea");
-		//		test.hashTest(500, "inv");
-		//		test.hashTest(500, "ord");
+		//div
 
-		//		test.hashTest(1000, "alea");
-		//		test.hashTest(1000, "inv");
-		//		test.hashTest(1000, "ord");
-		//
-		//		test.hashTest(5000, "alea");
-		//		test.hashTest(5000, "inv");
-		//		test.hashTest(5000, "ord");
-		//
-		//		test.hashTest(10000, "alea");
-		//		test.hashTest(10000, "inv");
-		//		test.hashTest(10000, "ord");
-		//
-		//		test.hashTest(50000, "alea");
-		//		test.hashTest(50000, "inv");
-		//		test.hashTest(50000, "ord");
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.hashTest(10000, "alea");
+		}
+		results[count++] = getAverage(aux);
 
-		System.out.println("oioi");
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.hashTest(10000, "inv");
+		}
+		results[count++] = getAverage(aux);
 
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.hashTest(10000, "ord");
+		}
+		results[count++] = getAverage(aux);
+
+		//div
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.hashTest(50000, "alea");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.hashTest(50000, "inv");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.hashTest(50000, "ord");
+		}
+		results[count++] = getAverage(aux);//
+
+		showResults(results);
+
+	}
+
+	public static void showResults(Result[] results){
+
+		for (int i = 0; i < results.length && results[i] != null; i++) {
+			System.out.println("Descrição: "+results[i].getDescription() +"\n" +
+					"Tempo: em média "+results[i].getTime() +"ms em 5 testes\n");
+		}
+	}
+
+	public static Result getAverage(Result[] results) {
+
+		long total = 0;
+		int count = 0;
+		int realCount = 0;
+
+		while(count < results.length){
+
+			if(results[count].getTime() != 0) {
+				total += results[count].getTime();
+				realCount++;
+			}
+
+			count++;
+		}
+
+		return realCount == 0 ? new Result(  0 , results[0].getDescription()) :  new Result(  total / realCount , results[0].getDescription());
 	}
 }

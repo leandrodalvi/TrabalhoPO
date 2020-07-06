@@ -125,7 +125,7 @@ public class Test {
 
 			FileManager.writeString(s, "ABBPesq" + testName + ".txt");
 
-			result = new Result((end - start), "ABB" + testName);
+			result = new Result((end - start),  testName);
 		}catch (IOException e){
 			JOptionPane.showMessageDialog(null, "Erro ao Ler Arquivo em "+testName);
 			result = new Result(0, "FAIL_ABB" + testName);
@@ -152,7 +152,7 @@ public class Test {
 
 			long start = System.currentTimeMillis();
 
-			Hashmap hashmap = new Hashmap((int) 1.1 * size);
+			Hashmap hashmap = new Hashmap(items.length);
 
 			for ( int i = 1 ; i < items.length; i++ ) {
 				hashmap.insert(items[i]);
@@ -160,10 +160,10 @@ public class Test {
 
 			FileManager.write(items,"ABBSort"+Type+""+size+".txt" );
 
-			//		for (int i = 0; i < imovel400.length ; i++) {
-			//			aux[0] = abb.search(imovel400[i]);
-			//			s += Helper.SearchResult(imovel400[i], aux)+"\n";
-			//		}
+			for (int i = 0; i < imovel400.length ; i++) {
+				aux[0] = hashmap.search(imovel400[i]);
+				s += Helper.SearchResult(imovel400[i], aux)+"\n";
+			}
 			long end = System.currentTimeMillis();
 
 			FileManager.writeString(s, "ABBPesq"+Type+""+size+".txt" );
@@ -172,14 +172,26 @@ public class Test {
 
 		}catch (IOException e){
 			JOptionPane.showMessageDialog(null, "Erro ao Ler Arquivo em "+testName);
-			result = new Result(0, "FAIL_ABB" + testName);
+			result = new Result(0, "FAIL_Hash" + testName);
 		}catch (StackOverflowError e) {
 			JOptionPane.showMessageDialog(null, "Stack OverFlow em "+testName);
-			result = new Result(0, "FAIL_ABB" + testName);
+			result = new Result(0, "FAIL_Hash" + testName);
+		}catch (NullPointerException e) {
+			JOptionPane.showMessageDialog(null, "NullPointerException em "+testName);
+			result = new Result(0, "FAIL_Hash" + testName);
 		}
 
 		return result;
 
+	}
+
+
+	private static boolean ehPrimo(int numero) {
+		for (int j = 2; j < numero; j++) {
+			if (numero % j == 0)
+				return false;
+		}
+		return true;
 	}
 
 

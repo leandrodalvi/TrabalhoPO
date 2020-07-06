@@ -10,7 +10,7 @@ public class ListNode {
 		this.elem = elem;
 		//Não é preciso apontar prox pra Null pois o mesmo já esta apontando pra tal
 	}
-	
+
 	//get block
 	public Item getElem() {
 		return this.elem;

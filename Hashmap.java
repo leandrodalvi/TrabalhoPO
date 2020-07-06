@@ -2,7 +2,7 @@ package TrabalhoPO;
 
 public class Hashmap{
     private List[] array;
-    
+
     public Hashmap(int n){
         // n equals number of elements
         int m = n + 1;
@@ -15,7 +15,6 @@ public class Hashmap{
             }
         }
         this.array = new List[m];
-
     }
 
     private boolean IsPrime(int n){
@@ -33,18 +32,35 @@ public class Hashmap{
         return true;
     }
 
-    private long hashing(long key){
-        return (key%this.array.length);
+    private int hashing(long key){
+        return (int) (key%this.array.length);
     }
 
     public void insert(Item novo){
         int key = (int) hashing(novo.getCpf());
-        if(array[key] == null){
+        if(array[key] == null) {
             array[key] = new List();
             array[key].insere_final(novo);
-        }else{
+        } else{
             array[key].insere_final(novo);
         }
     }
 
+    public Item search(long cpf){
+        int chave = hashing(cpf);
+        return pesquisaLinear(cpf , this.array[chave].getPrim());
+    }
+
+    public Item pesquisaLinear(long cpf, ListNode pesquisada) {
+
+        if(pesquisada == null){
+            return null;
+        }
+        if(cpf == pesquisada.getElem().getCpf()){
+            return pesquisada.getElem();
+        }else{
+            return pesquisaLinear(cpf, pesquisada.getProx());
+        }
+    }
 }
+
