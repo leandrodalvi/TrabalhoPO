@@ -271,6 +271,89 @@ public class Main {
 		}
 		results[count++] = getAverage(aux);//
 
+		//AVL
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(500, "alea");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(500, "inv");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(500, "ord");
+		}
+		results[count++] = getAverage(aux);
+
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(1000, "alea");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(1000, "inv");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(1000, "ord");
+		}
+		results[count++] = getAverage(aux);
+
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(5000, "alea");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(5000, "inv");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(5000, "ord");
+		}
+		results[count++] = getAverage(aux);
+
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(10000, "alea");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(10000, "inv");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(10000, "ord");
+		}
+		results[count++] = getAverage(aux);
+
+
+		//AVL
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(50000, "alea");
+		}
+		results[count++] = getAverage(aux);
+
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(50000, "inv");
+		}
+
+		results[count++] = getAverage(aux);
+		for(int i = 0;  i < 5 ; i++) {
+			aux[i] = test.avlTest(50000, "ord");
+		}
+		results[count++] = getAverage(aux);
+
 
 
 		//HASHMAP-UH
@@ -356,6 +439,9 @@ public class Main {
 			aux[i] = test.hashTest(50000, "ord");
 		}
 		results[count++] = getAverage(aux);//
+
+
+
 
 		showResults(results);
 

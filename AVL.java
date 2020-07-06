@@ -9,22 +9,51 @@ public class AVL {
         this.h = true;
     }
 
-    public void insereRaiz(Item elem) {
-        this.raiz = this.insere(elem, this.raiz);
+    public AVLNode getRaiz() {
+        return raiz;
     }
 
-    private AVLNode insere(Item elem, AVLNode no) {
+    public void insereRaiz(Item elem) {
+        this.raiz = this.insert(elem, this.raiz);
+    }
+
+    public Item search(long cpf) {
+        return search(cpf, this.raiz);
+    }
+
+    public Item search(long cpf, AVLNode raiz) {
+
+        if(raiz == null) {
+            return null;
+        }
+
+        if(cpf == raiz.getInfo().getCpf()) {
+            return raiz.getInfo();
+        }
+
+        if(cpf < raiz.getInfo().getCpf()) {
+            return search(cpf, raiz.getEsq());
+        }
+
+        if(cpf > raiz.getInfo().getCpf()) {
+            return search(cpf, raiz.getDir());
+        }
+
+        return null;
+    }
+
+    public AVLNode insert(Item elem, AVLNode no) {
         if (no == null) {
             AVLNode novo = new AVLNode(elem);
             this.h = true;
             return novo;
         } else {
             if (elem.getCpf() < no.getInfo().getCpf()) {
-                no.setEsq(this.insere(elem, no.getEsq()));
+                no.setEsq(this.insert(elem, no.getEsq()));
                 no = this.balancearDir(no);
                 return no;
             } else {
-                no.setDir(this.insere(elem, no.getDir()));
+                no.setDir(this.insert(elem, no.getDir()));
                 no = this.balancearEsq(no);
                 return no;
             }

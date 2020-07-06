@@ -108,8 +108,8 @@ public class Test {
 
 			ABB abb = new ABB();
 
-			for (int i = 1; i < items.length; i++) {
-				abb.inserir(new ABBNode(items[i]), abb.getRaiz());
+			for (int i = 0; i < items.length; i++) {
+				abb.inserir(new ABBNode(items[0]), abb.getRaiz());
 			}
 
 			new HeapSort().sort(items);
@@ -137,6 +137,47 @@ public class Test {
 		return result;
 	}
 
+	public Result avlTest(int size, String type) {
+
+		String testName = "AVLPesq" + type.substring(0, 1).toUpperCase() + type.substring(1) + "" + size;
+		Result result;
+
+		try {
+
+			Item[] items = FileManager.read("imovel" + size + "" + type + ".txt");
+			Item[] aux = new Item[1];
+			String s = "";
+
+			long start = System.currentTimeMillis();
+
+			AVL avl = new AVL();
+			avl.insereRaiz(items[0]);
+
+			for (int i = 1; i < items.length; i++) {
+				avl.insert(items[i], avl.getRaiz());
+			}
+
+			for (int i = 0; i < imovel400.length; i++) {
+				aux[0] = avl.search(imovel400[i]);
+				s += Helper.SearchResult(imovel400[i], aux) + "\n";
+			}
+
+			long end = System.currentTimeMillis();
+
+			FileManager.writeString(s, "AVLPesq" + testName + ".txt");
+
+			result = new Result((end - start),  testName);
+		}catch (IOException e){
+			JOptionPane.showMessageDialog(null, "Erro ao Ler Arquivo em "+testName);
+			result = new Result(0, "FAIL_AVL" + testName);
+		}catch (StackOverflowError e) {
+			JOptionPane.showMessageDialog(null, "Stack OverFlow em "+testName);
+			result = new Result(0, "FAIL_AVL" + testName);
+		}
+
+		return result;
+	}
+
 	public Result hashTest(int size, String type) throws IOException {
 
 		String testName = "HashPesq" + type.substring(0, 1).toUpperCase() + type.substring(1) + "" + size;
@@ -158,7 +199,7 @@ public class Test {
 				hashmap.insert(items[i]);
 			}
 
-			FileManager.write(items,"ABBSort"+Type+""+size+".txt" );
+			FileManager.write(items,"HashSort"+Type+""+size+".txt" );
 
 			for (int i = 0; i < imovel400.length ; i++) {
 				aux[0] = hashmap.search(imovel400[i]);
@@ -166,9 +207,9 @@ public class Test {
 			}
 			long end = System.currentTimeMillis();
 
-			FileManager.writeString(s, "ABBPesq"+Type+""+size+".txt" );
+			FileManager.writeString(s, "HashPesq"+Type+""+size+".txt" );
 
-			result = new Result((end - start), "ABBSort"+Type+""+size );
+			result = new Result((end - start), "HashSort"+Type+""+size );
 
 		}catch (IOException e){
 			JOptionPane.showMessageDialog(null, "Erro ao Ler Arquivo em "+testName);
@@ -182,7 +223,6 @@ public class Test {
 		}
 
 		return result;
-
 	}
 
 
